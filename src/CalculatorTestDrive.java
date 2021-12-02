@@ -13,11 +13,12 @@ public class CalculatorTestDrive {
     public static void run(String s){
         String[] stringArray = s.split(" ");
 
+
         if (stringArray.length != 3 ) throw new IllegalArgumentException("Неверный формат");
 
         String a = stringArray[0];
         String b = stringArray[2];
-        char op = stringArray[1].toCharArray()[0];
+        char op = stringArray[1].charAt(0);
 
         if (!(Converter.isNumber(a) && Converter.isNumber(b) && Converter.isMathOperation(op))){
             throw new IllegalArgumentException("Не математическое выражение");
